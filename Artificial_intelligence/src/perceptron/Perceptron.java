@@ -6,18 +6,19 @@ import java.util.Random;
 
 public class Perceptron {
 
-    static double LEARNING_RATE = 0.1;
+    private static double LEARNING_RATE = 0.1;
 
-    static int MAX_ITERATION = 100;
+    private static int MAX_ITERATION = 100;
 
-    // amount of possible proceedings
-    static int NUM_X = 4;
+    // number of possible way of proceeding
+    private static int NUM_X = 4;
 
-    static int NUM_WEIGHTS = 3;
+    //number od weights + bias
+    private static int NUM_WEIGHTS = 3;
 
-    static int threshold = 0;
+    private static int threshold = 0;
 
-    Controller myController;
+   private Controller myController;
 
     public Perceptron(Controller controller){
         this.myController = controller;
@@ -33,7 +34,7 @@ public class Perceptron {
         //variable determining difference between actual and calculated result
         double error = 0;
 
-        //variable determining if the error -> 0
+        //variable determining if the error reached the value of 0
         double global_error = 0;
 
         //initially weights have random value in the range from 0 to 1
@@ -102,7 +103,7 @@ public class Perceptron {
 
             myController.setText("\nIteration of learning: " + iteration);
 
-            // loop'll be over if actual output = calculated value or loop achieves maximum of iterations
+            // loop'll be over if actual output is equal calculated value or loop achieves maximum of iterations
         } while (global_error != 0 && iteration <= MAX_ITERATION);
 
         myController.setText("\n\nActivation function: \n" +
@@ -140,7 +141,7 @@ public class Perceptron {
 
     }
 
-    public int activation_function(int x1, int x2, double[] weights) {
+    private int activation_function(int x1, int x2, double[] weights) {
 
         double sum = 0;
         int output = -1;
@@ -157,10 +158,8 @@ public class Perceptron {
         return output;
     }
 
-    public static double randomNumber(double min, double max) {
+    private static double randomNumber(double min, double max) {
 
-        double number = min + Math.random() * (max - min);
-
-        return number;
+        return (min + Math.random() * (max - min));
     }
 }
