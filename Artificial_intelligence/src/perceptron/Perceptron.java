@@ -25,7 +25,7 @@ public class Perceptron {
 
     public void OR_operation() {
 
-        myController.setText("****** OR operation by perceptron\n");
+        myController.setText("****** OR logical function by perceptron\n");
 
         //defining weights for each input x
         double weights[] = new double[3];
@@ -105,10 +105,10 @@ public class Perceptron {
             // loop'll be over if actual output = calculated value or loop achieves maximum of iterations
         } while (global_error != 0 && iteration <= MAX_ITERATION);
 
-        myController.setText("\nActivation function: \n" +
+        myController.setText("\n\nActivation function: \n" +
                                 weights[0] + "*x1 +" +
                                 weights[1] + "*x2 +" +
-                                weights[2]);
+                                weights[2] + "\n");
 
         return weights;
     }
@@ -120,10 +120,10 @@ public class Perceptron {
         //testing set
         int x1, x2, output;
 
-        myController.setText("\n-----------------");
-        myController.setText("------Testing------");
+        myController.setText("\n----------------------\n");
+        myController.setText("-------Testing-------\n");
 
-        for(int i = 0; i < 15; i++) {
+        for(int i = 0; i < 10; i++) {
 
             myController.setText("\n---->  TEST "+(i+1)+"  <----");
 
@@ -135,7 +135,7 @@ public class Perceptron {
             output = activation_function(x1, x2, weights);
 
             myController.setText("\nRandom input:\n x1 = " + x1 + "\t\tx2 = " + x2);
-            myController.setText("\nOutput y = " + output);
+            myController.setText("\nOutput y = " + output+"\n");
         }
 
     }
