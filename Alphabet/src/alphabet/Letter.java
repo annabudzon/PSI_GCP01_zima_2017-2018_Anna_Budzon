@@ -2,6 +2,7 @@ package alphabet;
 
 
 import static alphabet.Constants.COLUMNS;
+import static alphabet.Constants.NUM_WEIGHTS;
 import static alphabet.Constants.ROWS;
 
 public class Letter {
@@ -37,5 +38,25 @@ public class Letter {
 
     public void setActual_y(int actual_y) {
         this.actual_y = actual_y;
+    }
+
+    public double sum_function(double[] weights){
+        double sum = 0;
+        int k = 0;
+
+        //sum
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLUMNS; j++) {
+                if (k < NUM_WEIGHTS) {
+                    sum += x[i][j] * weights[k];
+                }
+                k++;
+            }
+        }
+
+        //bias
+        sum += weights[NUM_WEIGHTS - 1];
+
+        return sum;
     }
 }

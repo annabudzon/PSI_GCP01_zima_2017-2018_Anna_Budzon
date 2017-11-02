@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class Perceptron {
 
-    private static double LEARNING_RATE = 0.001;
+    private static double LEARNING_RATE = 0.01;
 
     private static int MAX_ITERATION = 800;
 

@@ -15,7 +15,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Alphabet alphabet = new Alphabet(this);
-        alphabet.operation();
+        alphabet.upper_or_lower();
     }
 
     public void setText(String text){
