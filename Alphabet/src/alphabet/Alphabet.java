@@ -29,13 +29,13 @@ public class Alphabet {
         }
 
         Adaline adaline = new Adaline(weights, myController);
-        Sigmoidal sigmoidal = new Sigmoidal(weights, myController);
+       // Sigmoidal sigmoidal = new Sigmoidal(weights, myController);
 
         //adaline learning
-       // this.weights = adaline.learning();
+        this.weights = adaline.learning();
 
         //sigmoidal learning
-        this.weights = sigmoidal.learning();
+        //this.weights = sigmoidal.learning();
 
         //testing
         this.testing();
@@ -92,7 +92,7 @@ public class Alphabet {
         if (sum >= THRESHOLD)
             output = LOWERCASE;
         else
-            output = -1;
+            output = 0;
 
         return output;
     }

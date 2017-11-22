@@ -76,7 +76,7 @@ public class Adaline {
                 output = activation_function(sum);
 
                 //checking the difference between actual result and calculated value of output
-                delta = letters[i].getActual_y() - sum;
+                delta = letters[i].getActual_y() - output;
 
                 System.out.println(delta);
 

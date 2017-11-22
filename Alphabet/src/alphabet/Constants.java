@@ -14,7 +14,7 @@ public class Constants {
     //number of learning sets
     public static int NUM_LETTERS = 20;
 
-    public static double LEARNING_RATE = 0.1;
+    public static double LEARNING_RATE = 0.001;
 
     public static int MAX_ITERATION = 100000000;
 
