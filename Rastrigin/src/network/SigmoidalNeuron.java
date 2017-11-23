@@ -102,8 +102,6 @@ public class SigmoidalNeuron {
             sum = sum_function();
         }
         this.calculated_output = activation_function_tanh(sum);
-
-       // System.out.println("Calculated value neuron in layer " +layer_id+ ": sum = " + sum + "\toutput: " + this.calculated_output);
         return this.calculated_output;
     }
 
@@ -185,22 +183,14 @@ public class SigmoidalNeuron {
      */
     public void updateWeights(double delta){
 
+        //updating weights
         for (int i = 0; i < number_inputs; i++) {
             weights[i] += LEARNING_RATE * delta * inputs[i] * derivative_tanh(calculated_output);
 
         }
-
         //updating bias
-        weights[number_weights - 1] += LEARNING_RATE*delta;
+        weights[number_weights - 1] += LEARNING_RATE * delta;
 
-        for (int i = 0; i < number_weights-1; i++) {
-            if(id == -1){
-                //System.out.println("\n------BEFORE: Layer nr "+this.layer_id+", neuron input: " + String.format("%.6f", weights[i]));
-                //myController.setText("\n------BEFORE: Layer nr "+this.layer_id+", neuron input: " + String.format("%.6f", weights[i]));
-            }
-           // myController.setText("\n------AFTER: Layer nr "+this.layer_id+", neuron nr "+this.id + ": " + String.format("%.6f", weights[i])+ "\n");
-           //System.out.println("\n------WEIGHT "+i+": Layer nr "+this.layer_id+", neuron nr "+this.id + ": " + String.format("%.6f", weights[i]));
-        }
     }
 
     /**
