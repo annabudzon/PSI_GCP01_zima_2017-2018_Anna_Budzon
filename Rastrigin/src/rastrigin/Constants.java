@@ -14,7 +14,7 @@ public class Constants {
 
     public static int NUM_OUTPUT_NEURONS = 1;
 
-    public static int NUM_NEURONS = NUM_HIDDEN_NEURONS_1 + NUM_OUTPUT_NEURONS + 1;
+    public static int NUM_NEURONS = NUM_HIDDEN_NEURONS_1 + NUM_HIDDEN_NEURONS_2 + NUM_OUTPUT_NEURONS + 1;
 
     public static int NUM_HIDDEN_LAYERS = 2;
 

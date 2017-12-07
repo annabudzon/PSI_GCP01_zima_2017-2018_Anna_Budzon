@@ -28,14 +28,14 @@ public class Alphabet {
             this.weights[i] = randomNumber(0, 1);
         }
 
-        Adaline adaline = new Adaline(weights, myController);
-       // Sigmoidal sigmoidal = new Sigmoidal(weights, myController);
+       // Adaline adaline = new Adaline(weights, myController);
+        Sigmoidal sigmoidal = new Sigmoidal(weights, myController);
 
         //adaline learning
-        this.weights = adaline.learning();
+        //this.weights = adaline.learning();
 
         //sigmoidal learning
-        //this.weights = sigmoidal.learning();
+        this.weights = sigmoidal.learning();
 
         //testing
         this.testing();
